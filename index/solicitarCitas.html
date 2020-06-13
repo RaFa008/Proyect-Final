@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../librerias/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../js/solicitarCita.js"></script>
+    <title>Mecanico</title>
+  </head>
+  <body class=" bodySesion">
+
+        <div class="contenedorPrincipal">
+            <div class="conteImagen">
+                <img src="https://www.graphicsprings.com/filestorage/stencils/f2918b8d311762af27c7a636fce1e37c.svg" >
+            </div>
+           
+            <form action="">
+              <button class="inicio" id="inicio">Regresar al inicio</button>
+                <div class="contenDatos">
+                  
+                <input type="date" class="lineEditN" id="fecha" placeholder="Nombre">
+                <input type="time" class="lineEditN" id="hora">
+                </div>
+                <div class="contenDatos">
+                <textarea class="asunto" id="asunto" cols="50" rows="5" placeholder="Escribe el motivo de tu visita"></textarea>
+                </div>
+                <select id="marcas" class="preguntaCuenta">
+                    <option value="">Elige una marca</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Chevrole">Chevrole</option>
+                    <option value="Sead">Sead</option>
+                </select>
+                <input type="text" id="modelo" class="lineEdit" placeholder="Modelo del carro">
+                <input type="text" id="ano" class="lineEdit" placeholder="Año del carro">
+                <button class="inicio" id="RealizarCita">Realizar cita</button>
+            </form>
+        </div>
+  </body>
+</html>

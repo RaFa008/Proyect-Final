@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../librerias/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../js/crearUsuarios.js"></script>
+    <title>Mecanico</title>
+  </head>
+  <body class=" bodySesion">
+
+        <div class="contenedorPrincipal">
+            <div class="conteImagen">
+                <img src="https://www.graphicsprings.com/filestorage/stencils/f2918b8d311762af27c7a636fce1e37c.svg" >
+            </div>
+            <form action="">
+                <div class="contenDatos">
+                <input type="text" class="lineEditN" id="nombre" placeholder="Nombre">
+                <input type="text" class="lineEditN" id="apellidos" placeholder="Apellidos">
+                </div>
+                <input type="email" class="lineEdit" id="correo" placeholder="Corrreo electronico">
+                <input type="password" class="lineEdit" id="password" placeholder="Contraseña">
+                <select id="pregunta" class="preguntaCuenta">
+                    <option value="">Selecciona una pregunta</option>
+                    <option value="1">Nombre de tu mascota</option>
+                    <option value="2">Nombre de tu abuelo paterno</option>
+                    <option value="3">Nombre de tu primaria</option>
+                    <option value="4">Pelicula favorita</option>
+                    <option value="5">Lugar favorito</option>
+                </select>
+                <input type="text" id="respuesta" class="lineEdit" placeholder="Responde la pregunta">
+                <button class="inicio" id="CrearCuenta">Crear cuenta</button>
+            </form>
+        </div>
+  </body>
+</html>

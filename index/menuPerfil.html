@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../librerias/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../js/menuPrefil.js"></script>
+    <title>Mecanico</title>
+  </head>
+  <body>
+            <div class="contenMenu">
+
+                <div class="datosUser">
+                    <h4 id="nombre">nombre</h4>
+                    <h4 id="apellido">apellido</h4> 
+                    <br>
+                </div>
+                <div class="botones">
+                   
+                    <!--botones de usuario -->
+                    <button class="btngenerico" id="perfil">Editar perfil</button>
+                    <button class="btngenerico" id="verCitasUser">Ver citas</button>
+                    <button class="btngenerico" id="menuPrincipal">Menu principal</button>
+                    <button class="btngenerico" id="realCita">Realizar cita</button>
+
+                    <!--botones de admin-->
+                    <button class="btngenerico" id="verCitasAdm">Ver citas</button>
+                    <button class="btngenerico" id="NuevoServicio">Registar servicio</button>
+                    <button class="btngenerico" id="NUevoUSuario">Registar usuarios</button>
+                    <button class="btngenerico" id="verAlmacen">Almacen</button>
+                    <button class="btngenerico" id="ActualizaSer">Actualizar Servicio</button>
+                    <button class="btngenerico" id="usuarios">Eliminar usuarios</button>
+                    <!-- botones de stoke-->
+                    <button class="btngenerico" id="regProducto">Registrar producto</button>
+                    <button class="btngenerico" id="actProducto">Actualizar productos</button>
+                </div>
+            </div>
+            <div class="promociones" id="promociones">
+            </div>
+
+            
+            <script>
+
+            function selecionado(e){
+            //alert("Editar torneo");
+            var id=(e.id);
+            var nom=('nombre'+e.id);
+            var can=('cantidad'+e.id);
+            
+            var nombre=document.getElementById(nom).value;
+            var cantidad=document.getElementById(can).value;
+            console.log(nombre);
+            console.log(cantidad);
+              
+              if(nombre == "" || cantidad == "" ){
+                alert("Todos los campos deben tener contendido");
+              }else{
+                var datos=('nombre='+nombre+'&cantidad='+cantidad+'&id='+id);      
+                $.ajax({
+                  type: "get",
+                  url: "../php/actualizarProducto.php",
+                  data: datos,
+                success: function (respuesta) {
+                  if(respuesta==1){
+                    alert("Actualizacion correcta");
+                  }else{
+                    alert("Error al actualizar");
+                  }
+                }
+              });
+              }
+            }
+
+            //FUNCION PARA ACTUALIZAR UN SERVICIO
+            function selecionAct(e){
+            var id=(e.id);
+            var nom=('nombre'+e.id);
+            var info=('info'+e.id);
+
+            var nombre=document.getElementById(nom).value;
+            var informacio=document.getElementById(info).value;
+
+            //console.log(nombre);
+            //console.log(informacio);
+
+            if(nombre == "" || informacio == "" ){
+                alert("Todos los campos deben tener contendido");
+              }else{
+                var datos=('nombre='+nombre+'&informacio='+informacio+'&id='+id);      
+                $.ajax({
+                  type: "get",
+                  url: "../php/actualizaServicio.php",
+                  data: datos,
+                success: function (respuesta) {
+                  if(respuesta==1){
+                    alert("Actualizacion correcta");
+                  }else{
+                    alert("Error al actualizar");
+                  }
+                }
+              });
+              }
+
+            
+            }
+
+            //fUNCION PARA ELIMINAR UN SERVICIO
+            function selecionEli(e){
+            var id=(e.id);
+      
+            console.log(id);
+                var datos=('id='+id);      
+                $.ajax({
+                  type: "get",
+                  url: "../php/eliminarServicio.php",
+                  data: datos,
+                success: function (respuesta) {
+                  if(respuesta==1){
+                    alert("Eliminacion correcta correcta");
+                    
+                  }else{
+                    alert("Error al actualizar");
+                  }
+                }
+              });
+              
+            
+            }
+            //fUNCION PARA ELIMINAR UN SERVICIO
+            function selecionEliUser(e){
+            var id=(e.id);
+      
+            console.log(id);
+                var datos=('id='+id);      
+                $.ajax({
+                  type: "get",
+                  url: "../php/eliUsuarios.php",
+                  data: datos,
+                success: function (respuesta) {
+                  if(respuesta==1){
+                    alert("Eliminacion correcta correcta");
+                  }else{
+                    alert("Error al actualizar");
+                  }
+                }
+              });
+              
+            }
+
+
+            </script>
+
+            
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../librerias/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../js/nuevoUser.js"></script>
+    <title>Mecanico</title>
+  </head>
+  <body>
+        <div class="conteUser" id="promociones">
+          <h4>REGISTRAR NUEVO USUARIO</h4>
+            <input type="text" id="nombreUser" placeholder="Nombre" class="lineEditUser">
+            <input type="text" id="apellidoUser" placeholder="Apellidos" class="lineEditUser">
+            <input type="email" id="correo" placeholder="Corre electronico" class="lineEditUser">
+            <input type="password" id="contrasena" placeholder="Contraseña" class="lineEditUser">
+            <select  id="tipoUser" class="selectUSer">
+                <option value="">Selecciona el tipo de usuario</option>
+                <option value="1">Administrador</option>
+                <option value="2">Stock</option>
+            </select>
+            <button class="btnservicio" id="nuevoUser">Registar Usuario</button>
+        </div>
+  </body>
+</html>
